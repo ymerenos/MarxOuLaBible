@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MarxOuLabible</string>
+    <string-array name="bible_quotes">
+        <item>You cannot serve both God and wealth </item>
+        <item>To one who strikes you on the cheek, offer the other also, and from one who takes away your cloak do not withhold your tunic either. Give to everyone who begs from you, and from one who takes away your goods do not demand them back. </item>
+        <item>And they shall beat their swords into plowshares, and their spears into pruning hooks: nation shall not lift up sword against nation, neither shall they learn war any more </item>
+        <item>Blessed are the meek, for they shall inherit the earth </item>
+
+        <item>I tell you the truth, it is hard for a rich man to enter the kingdom of heaven. Again I tell you, it is easier for a camel to go through the eye of a needle than for a rich man to enter the kingdom of God</item>
+    </string-array>
+    <string-array name="marx_quotes">
+        <item>The philosophers have only interpreted the world, in various ways. The point, however, is to change it</item>
+        <item>I am nothing but I must be everything</item>
+        <item>From each according to his abilities, to each according to his needs.</item>
+    </string-array>
+</resources>
