@@ -6,6 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+//import random module for java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
                 getActivity().onBackPressed();
         }
     });
+
+
 }
 
 
