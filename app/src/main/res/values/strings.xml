@@ -8,9 +8,14 @@
 
         <item>I tell you the truth, it is hard for a rich man to enter the kingdom of heaven. Again I tell you, it is easier for a camel to go through the eye of a needle than for a rich man to enter the kingdom of God</item>
     </string-array>
+
     <string-array name="marx_quotes">
         <item>The philosophers have only interpreted the world, in various ways. The point, however, is to change it</item>
         <item>I am nothing but I must be everything</item>
         <item>From each according to his abilities, to each according to his needs.</item>
     </string-array>
+
+    <string name="defaultQuote">Darmanin, cordialement mais tu mérite de mourir</string>
+    <string name="Bouton_Marx">Karl Marx</string>
+    <string name="Bouton_Bible">La Sainte bible</string>
 </resources>
