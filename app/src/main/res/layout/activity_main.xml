@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
-
 
         <Button
             android:id="@+id/Bouton_Marx"
@@ -29,44 +29,15 @@
     </LinearLayout>
 
     <!-- We create a Recyclerview containing a CardView with a text view inside -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+
+
+
+    <com.yalantis.library.Koloda
+        android:id="@+id/koloda"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        app:koloda_card_layout="@layout/cardview" />
 
 
 </RelativeLayout>
-
-    <!--
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/text_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </androidx.recyclerview.widget.RecyclerView>
-    -->
 
