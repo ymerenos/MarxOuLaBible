@@ -1,11 +1,19 @@
 package com.example.marxoulabible;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
@@ -16,11 +24,22 @@ public class SwipeListener implements KolodaListener {
     private StringManagement stringManager;
     private ViewGroup rootLayout;
 
+    private Bitmap marxHead;
+    private Bitmap jesusHead;
+
     public SwipeListener(Context context, StringManagement stringManager, ViewGroup rootLayout) {
         super();
         this.context = context;
         this.stringManager = stringManager;
         this.rootLayout = rootLayout;
+
+        this.marxHead = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.marx_head);
+        ImageView imageViewMarx = new ImageView(context);
+        imageViewMarx.setImageBitmap(this.marxHead);
+
+        this.jesusHead = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.jesus_head);
+        ImageView imageViewJesus = new ImageView(context);
+        imageViewJesus.setImageBitmap(this.jesusHead);
     }
     @Override
     public void onCardDoubleTap(int i) {
@@ -50,6 +69,8 @@ public class SwipeListener implements KolodaListener {
         System.out.println(stringManager.getReponsesUser());
         // Déclenche l'animation de changement de couleur
         showColorEffect(0xBFCF1922);
+        animateImage(rootLayout, R.drawable.marx_head, 0); // Animate an image falling from the left side
+
 
         if(stringManager.isOver()){
             endActivity();
@@ -63,6 +84,7 @@ public class SwipeListener implements KolodaListener {
         System.out.println(stringManager.getReponsesUser());
         // Déclenche l'animation de changement de couleur
         showColorEffect(0xBF12067D);
+        animateImage(rootLayout, R.drawable.jesus_head, 1); // Animate an image falling from the left side
 
 
         if(stringManager.isOver()){
@@ -128,6 +150,39 @@ public class SwipeListener implements KolodaListener {
 
         // Start the animation
         colorView.startAnimation(fadeOut);
+    }
+
+    public void animateImage(ViewGroup rootLayout, int drawableResId, int side) {
+        // Create an ImageView to hold the image
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(drawableResId);
+
+        // Add the ImageView to the root layout
+        rootLayout.addView(imageView);
+
+        // Set the initial position of the ImageView
+        int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
+        int x = (side == 0) ? -imageView.getWidth() : screenWidth;
+        int y = (int) (Math.random() * screenHeight);
+        imageView.setX(x);
+        imageView.setY(y);
+
+        // Create an ObjectAnimator to animate the ImageView's X position
+        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "x", x, screenWidth / 2f);
+        animator.setDuration(1000);
+        animator.setInterpolator(new AccelerateInterpolator());
+
+        // Set a listener to remove the ImageView when the animation is finished
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                rootLayout.removeView(imageView);
+            }
+        });
+
+        // Start the animation
+        animator.start();
     }
 
 }
