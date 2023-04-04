@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.yalantis.library.Koloda;
@@ -22,6 +26,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
 
+        ViewGroup rootLayout = findViewById(android.R.id.content);
+
         // get the number of quotes to display
         Intent intent = getIntent();
         int numQuotes = Integer.parseInt(intent.getStringExtra("numQuotes"));
@@ -31,9 +37,12 @@ public class GameActivity extends AppCompatActivity {
         StringManagement stringManager = new StringManagement(this);
         SwipeAdapter adapter = new SwipeAdapter(this, numQuotes,stringManager);
         koloda.setAdapter(adapter);
-        koloda.setKolodaListener(new SwipeListener(this, stringManager));
+        koloda.setKolodaListener(new SwipeListener(this, stringManager, rootLayout));
 
     }
+
+    /* Animation de changement de couleur */
+
 
 }
 
