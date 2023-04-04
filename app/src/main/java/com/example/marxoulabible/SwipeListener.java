@@ -49,8 +49,8 @@ public class SwipeListener implements KolodaListener {
         System.out.println(stringManager.getReponses());
         System.out.println(stringManager.getReponsesUser());
         // Déclenche l'animation de changement de couleur
-        showColorEffect(0xFFFF0000);
-        
+        showColorEffect(0xBFCF1922);
+
         if(stringManager.isOver()){
             endActivity();
         }
@@ -62,7 +62,7 @@ public class SwipeListener implements KolodaListener {
         System.out.println(stringManager.getReponses());
         System.out.println(stringManager.getReponsesUser());
         // Déclenche l'animation de changement de couleur
-        showColorEffect(0xFF00FF00);
+        showColorEffect(0xBF12067D);
 
 
         if(stringManager.isOver()){
