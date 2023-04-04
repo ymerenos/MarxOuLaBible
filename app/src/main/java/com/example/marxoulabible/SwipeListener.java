@@ -45,9 +45,7 @@ public class SwipeListener implements KolodaListener {
 
     @Override
     public void onCardSwipedLeft(int i) {
-        stringManager.addReponseUser(1);
-        System.out.println(stringManager.getReponses());
-        System.out.println(stringManager.getReponsesUser());
+        stringManager.addReponseUser(0);
         // Déclenche l'animation de changement de couleur
         showColorEffect(0xBFCF1922);
 
@@ -58,9 +56,7 @@ public class SwipeListener implements KolodaListener {
 
     @Override
     public void onCardSwipedRight(int i) {
-        stringManager.addReponseUser(0);
-        System.out.println(stringManager.getReponses());
-        System.out.println(stringManager.getReponsesUser());
+        stringManager.addReponseUser(1);
         // Déclenche l'animation de changement de couleur
         showColorEffect(0xBF12067D);
 

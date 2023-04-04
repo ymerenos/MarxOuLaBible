@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="972dp"
+        android:layout_height="969dp"
+        android:alpha="0.1"
+        android:rotation="-17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icon_marx_jesus_foreground" />
+
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="155dp"

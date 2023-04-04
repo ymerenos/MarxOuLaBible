@@ -25,14 +25,14 @@ public class StringManagement {
         Resources res = mContext.getResources();
 
         if(quote_from_marx==0){
-            //We get a random quote from the marx quotes and we add a 0 in front of it to indicate that it is a marx quote
+            //We get a random quote from the marx quotes
             quote = res.getStringArray(R.array.marx_quotes)[res.getStringArray(R.array.marx_quotes).length];
-            return ("0"+quote);
+            return (quote);
         }
         else{
-            //We get a random quote from the bible quotes and we add a 1 in front of it to indicate that it is a bible quote
+            //We get a random quote from the bible quotes
             quote = res.getStringArray(R.array.bible_quotes)[res.getStringArray(R.array.bible_quotes).length];
-            return ("1"+quote);
+            return (quote);
         }
     }
     //Function to get a random list of quotes from marx_quotes or bible_quotes in strings.xml the number of quotes is a parameter
@@ -46,12 +46,14 @@ public class StringManagement {
             is_quote_from_marx = rand.nextInt(2);
             if(is_quote_from_marx==0){
                 //We get a random quote from the marx quotes and
-                quotes.add(res.getStringArray(R.array.marx_quotes)[res.getStringArray(R.array.marx_quotes).length-1]);
+                int quote_number = rand.nextInt(res.getStringArray(R.array.marx_quotes).length);
+                quotes.add(res.getStringArray(R.array.marx_quotes)[quote_number]);
 
             }
             else{
                 //We get a random quote from the bible quotes
-                quotes.add(res.getStringArray(R.array.bible_quotes)[res.getStringArray(R.array.bible_quotes).length-1]);
+                int quote_number = rand.nextInt(res.getStringArray(R.array.bible_quotes).length);
+                quotes.add(res.getStringArray(R.array.bible_quotes)[quote_number]);
             }
             reponses.add(is_quote_from_marx);
         }

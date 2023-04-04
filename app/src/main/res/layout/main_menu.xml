@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9F2C2C">
+    android:background="#575757">
 
     <Button
         android:id="@+id/btn_play"
@@ -55,11 +55,25 @@
         android:layout_width="386dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#270404"
+        android:background="#7C6E88"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="src_in"
         android:entries="@array/mode_options"
         android:prompt="@string/mode_text"
         app:layout_constraintBottom_toTopOf="@+id/btn_play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="972dp"
+        android:layout_height="969dp"
+        android:alpha="0.1"
+        android:rotation="-17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icon_marx_jesus_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
