@@ -18,4 +18,14 @@
     <string name="defaultQuote">Darmanin, cordialement mais tu mérite de mourir</string>
     <string name="Bouton_Marx">Karl Marx</string>
     <string name="Bouton_Bible">La Sainte bible</string>
+
+    <!-- MENU PRINCIPAL -->
+    <!-- Strings pour le choix du mode de jeu au menu principal -->
+    <string-array name="mode_options">
+        <item>Mode classique</item>
+        <item>Mode rapide</item>
+        <item>Mode libre</item>
+    </string-array>
+
+    <string name="mode_text">Choisissez un mode de jeu</string>
 </resources>
