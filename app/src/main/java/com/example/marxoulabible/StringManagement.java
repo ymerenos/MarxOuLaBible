@@ -9,7 +9,11 @@ import android.content.res.Resources;
 
 public class StringManagement {
     private static Context mContext;
+    private static List<Integer> reponses;
+    private static List<Integer> reponses_user;
     public StringManagement(Context context) {
+        reponses = new ArrayList<Integer>();
+        reponses_user = new ArrayList<Integer>();
         mContext = context;
     }
 
@@ -33,20 +37,23 @@ public class StringManagement {
     }
     //Function to get a random list of quotes from marx_quotes or bible_quotes in strings.xml the number of quotes is a parameter
     public static List<String> getRandomQuotes(int nbQuotes){
+
         Random rand = new Random();
         List<String> quotes = new ArrayList<>();
         Resources res = mContext.getResources();
-        int quote_from_marx;
+        int is_quote_from_marx;
         for(int i=0; i<nbQuotes; i++){
-            quote_from_marx = rand.nextInt(2);
-            if(quote_from_marx==0){
+            is_quote_from_marx = rand.nextInt(2);
+            if(is_quote_from_marx==0){
                 //We get a random quote from the marx quotes and
                 quotes.add(res.getStringArray(R.array.marx_quotes)[res.getStringArray(R.array.marx_quotes).length-1]);
+
             }
             else{
                 //We get a random quote from the bible quotes
                 quotes.add(res.getStringArray(R.array.bible_quotes)[res.getStringArray(R.array.bible_quotes).length-1]);
             }
+            reponses.add(is_quote_from_marx);
         }
         return quotes;
     }
@@ -59,6 +66,33 @@ public class StringManagement {
             ints[i] = rand.nextInt(2);
         }
         return ints;
+    }
+
+    public void addReponseUser(int reponseUser){
+        reponses_user.add(reponseUser);
+    }
+
+    //Function to get the array of ints that indicates which quote is from marx and which one is from the bible
+    public static List getReponses(){
+        return reponses;
+    }
+
+    public static List getReponsesUser(){
+        return reponses_user;
+    }
+
+    public static boolean isOver(){
+        return reponses.size() == reponses_user.size();
+    }
+
+    public static int bonneReponse(){
+        int nbBonneReponse = 0;
+        for(int i=0; i<reponses.size(); i++){
+            if(reponses.get(i) == reponses_user.get(i)){
+                nbBonneReponse++;
+            }
+        }
+        return nbBonneReponse;
     }
 
 

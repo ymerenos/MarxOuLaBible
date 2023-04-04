@@ -17,9 +17,9 @@ public class SwipeAdapter extends BaseAdapter {
     private List<String> mItems = new ArrayList<String>();
     private StringManagement stringManagement;
     private int[] quoteTypes;
-    public SwipeAdapter(Context context, int nbItems) {
+    public SwipeAdapter(Context context, int nbItems, StringManagement stringManager) {
         mContext = context;
-        stringManagement = new StringManagement(context);
+        stringManagement = stringManager;
         quoteTypes = stringManagement.getRandomInts(nbItems);
         mItems = stringManagement.getRandomQuotes(nbItems);
 

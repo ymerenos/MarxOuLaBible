@@ -8,6 +8,7 @@ import java.util.List;
 import com.yalantis.library.Koloda;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -22,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         koloda = findViewById(R.id.koloda);
 
-
-        SwipeAdapter adapter = new SwipeAdapter(this, 3);
+        StringManagement stringManager = new StringManagement(this);
+        SwipeAdapter adapter = new SwipeAdapter(this, 5,stringManager);
         koloda.setAdapter(adapter);
+        koloda.setKolodaListener(new SwipeListener(this, stringManager));
 
     }
 
