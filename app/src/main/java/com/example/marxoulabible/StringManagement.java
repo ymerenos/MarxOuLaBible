@@ -47,13 +47,13 @@ public class StringManagement {
             if(is_quote_from_marx==0){
                 //We get a random quote from the marx quotes and
                 int quote_number = rand.nextInt(res.getStringArray(R.array.marx_quotes).length);
-                quotes.add(res.getStringArray(R.array.marx_quotes)[quote_number]);
+                quotes.add("\""+ res.getStringArray(R.array.marx_quotes)[quote_number] +"\"");
 
             }
             else{
                 //We get a random quote from the bible quotes
                 int quote_number = rand.nextInt(res.getStringArray(R.array.bible_quotes).length);
-                quotes.add(res.getStringArray(R.array.bible_quotes)[quote_number]);
+                quotes.add("\""+ res.getStringArray(R.array.bible_quotes)[quote_number]+ "\"");
             }
             reponses.add(is_quote_from_marx);
         }

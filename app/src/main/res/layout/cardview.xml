@@ -28,34 +28,51 @@
 
             <TextView
                 android:id="@+id/text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="294dp"
+                android:layout_height="128dp"
                 android:layout_marginTop="312dp"
                 android:layout_marginBottom="308dp"
+                android:fontFamily="@font/josefin_sans_bold_italic"
                 android:text="@string/defaultQuote"
                 android:visibility="visible"
+                app:autoSizeMaxTextSize="30dp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.522" />
 
             <ImageView
                 android:id="@+id/marx_image"
 
                 android:layout_width="64dp"
                 android:layout_height="64dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="133dp"
+                android:layout_marginBottom="184dp"
                 android:src="@drawable/marx_head"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="64dp" />
+                app:layout_constraintBottom_toTopOf="@+id/text_view"
+                app:layout_constraintEnd_toStartOf="@+id/jesus_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/jesus_image"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
+                android:layout_marginStart="133dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="184dp"
                 android:src="@drawable/jesus_head"
-                tools:layout_editor_absoluteX="253dp"
-                tools:layout_editor_absoluteY="73dp" />
+                app:layout_constraintBottom_toTopOf="@+id/text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/marx_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
