@@ -39,11 +39,29 @@
                 app:layout_constraintHorizontal_bias="0.489"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/marx_image"
+
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/marx_head"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="64dp" />
+
+            <ImageView
+                android:id="@+id/jesus_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/jesus_head"
+                tools:layout_editor_absoluteX="253dp"
+                tools:layout_editor_absoluteY="73dp" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.cardview.widget.CardView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
