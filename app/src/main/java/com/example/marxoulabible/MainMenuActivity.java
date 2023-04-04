@@ -1,13 +1,19 @@
 package com.example.marxoulabible;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import java.util.Arrays;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -52,5 +58,17 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        // Add quotes button
+        Button addQuotesButton = findViewById(R.id.btn_addquote);
+        addQuotesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create and show the AddQuote dialog fragment
+                DialogFragment addQuoteFragment = new AddQuote();
+                addQuoteFragment.show(getSupportFragmentManager(), "add_quote");
+            }
+        });
+
     }
 }
+
