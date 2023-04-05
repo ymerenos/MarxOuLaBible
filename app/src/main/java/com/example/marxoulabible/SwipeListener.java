@@ -160,13 +160,13 @@ public class SwipeListener implements KolodaListener {
         int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
         int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
         int x = (side == 0) ? -imageView.getWidth() : screenWidth;
-        int y = (int) (Math.random() * screenHeight);
+        int y = (int) (Math.random() * screenHeight - imageView.getHeight());
         imageView.setX(x);
         imageView.setY(y);
 
         // Create an ObjectAnimator to animate the ImageView's X position
         ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "x", x, screenWidth / 2f);
-        animator.setDuration(1000);
+        animator.setDuration(2500);
         animator.setInterpolator(new AccelerateInterpolator());
 
         // Set a listener to remove the ImageView when the animation is finished
