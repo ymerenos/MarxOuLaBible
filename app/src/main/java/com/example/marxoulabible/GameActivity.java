@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.yalantis.library.Koloda;
@@ -17,7 +14,6 @@ import com.yalantis.library.Koloda;
 public class GameActivity extends AppCompatActivity {
 
 
-    private TextView textView;
     private StringManagement stringManagement;
     Koloda koloda;
 

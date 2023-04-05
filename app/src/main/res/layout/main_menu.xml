@@ -69,7 +69,6 @@
         android:layout_width="972dp"
         android:layout_height="969dp"
         android:alpha="0.1"
-        android:rotation="-17"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

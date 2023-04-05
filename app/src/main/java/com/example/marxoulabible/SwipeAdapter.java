@@ -10,8 +10,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.marxoulabible.StringManagement;
-
 public class SwipeAdapter extends BaseAdapter {
     private Context mContext;
     private List<String> mItems = new ArrayList<String>();
